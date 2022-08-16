@@ -1,39 +1,20 @@
 
-// ** add withdraw button event handeler
-
 document.getElementById('withdraw-button').addEventListener('click', ()=>{
+
+    const withdrawAmount = inputFieldValue('withdraw');
+
+    const depositDisplayValue = displayValues('withdraw-display');
+
     
-    const withdrawInputValueField = document.getElementById('withdraw');
-    let withdrawInputValueString = withdrawInputValueField.value;
-    const withdrawInputValue = parseFloat( withdrawInputValueString);
+    const displayTotal = withdrawAmount + depositDisplayValue;
 
-    // ** clear withdraw input field
+    setDisplayValue('withdraw-display', displayTotal);
 
-    withdrawInputValueField.value = '';
+    const balanceDisplayValue = displayValues('balance-display');
 
-    // ** grab the withdraw display value
+    const balanceTotal = balanceDisplayValue - withdrawAmount;
 
-    const withdrawDisplayValueField = document.getElementById('withdraw-display');
-    const withdrawDisplayValueString = withdrawDisplayValueField.innerText;
-    const withdrawDisplayValue = parseFloat(withdrawDisplayValueString);
+    setDisplayValue('balance-display', balanceTotal);
 
-    //** add withdraw display value add input withdraw value and set the new display value
-
-    const displayValue = withdrawDisplayValue + withdrawInputValue;
-
-    withdrawDisplayValueField.innerText = displayValue;
-
-    // ** deduct the withdraw amount from the balance
-
-    const balanceDisplayValueField = document.getElementById('balance-display');
-    const balanceDisplayValueString = balanceDisplayValueField.innerText;
-    const balanceDisplayValue = parseFloat(balanceDisplayValueString);
-
-    // ** set the final display value after the withdraw amount
-
-    const finalBalance = balanceDisplayValue - withdrawInputValue;
-
-    // ** set the finalBalance 
-
-    balanceDisplayValueField.innerText = finalBalance;
+    
 });

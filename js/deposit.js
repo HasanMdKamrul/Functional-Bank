@@ -1,35 +1,25 @@
-// ** 1 add event handeler in the deposit button
+// ** click korbo jekhane event handler add hobe seikhane
 
-document.getElementById('deposit-button').addEventListener('click', ()=>{
+
+
+document.getElementById('deposit-button').addEventListener('click', ()=> {
+
+    // * we grab the same inputFieldValue from 2 input field one is deposit inputfiled and another is withdraw inputfiled
+    // ** Now we'll write a function for that and use that according to our need
+
+    const inputAmount = inputFieldValue('deposit');
+
+    const depositDisplayValue = displayValues('deposit-display');
+
     
-    // ** grab the input value
+    const displayTotal = inputAmount + depositDisplayValue;
 
-    const inputValueField = document.getElementById('deposit');
-    const inputValueString = inputValueField.value;
-    const inputValue = parseFloat(inputValueString);
+    setDisplayValue('deposit-display', displayTotal);
 
-    // ** clear the input value field
+    const balanceDisplayValue = displayValues('balance-display');
 
-    inputValueField.value = '';
+    const balanceTotal = inputAmount + balanceDisplayValue;
 
-    // ** Now we'll grab the previous deposit value or display deposit value
-
-    const displayDepositValueField = document.getElementById('deposit-display');
-    const displayDepositValueString = displayDepositValueField.innerText;
-    const displayDepositValue = parseFloat(displayDepositValueString);
-
-    // ** update the deposit display
-
-    const depositDisplay = displayDepositValue + inputValue;
-    displayDepositValueField.innerText = depositDisplay;
-
-    // ** Now we'll grab the balance value or balance display
-
-    const balanceDisplayField = document.getElementById('balance-display');
-    const balanceDisplayValueString = balanceDisplayField.innerText;
-    const balanceDisplayValue = parseFloat(balanceDisplayValueString);
-
-    const balanceDisplay = balanceDisplayValue + inputValue;
-
-    balanceDisplayField.innerText = balanceDisplay;
+    setDisplayValue('balance-display', balanceTotal);
+    
 })
