@@ -4,7 +4,7 @@
 document.getElementById('withdraw-button').addEventListener('click', ()=>{
     
     const withdrawInputValueField = document.getElementById('withdraw');
-    const withdrawInputValueString = withdrawInputValueField.value;
+    let withdrawInputValueString = withdrawInputValueField.value;
     const withdrawInputValue = parseFloat( withdrawInputValueString);
 
     // ** clear withdraw input field
