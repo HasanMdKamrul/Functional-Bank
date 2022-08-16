@@ -20,15 +20,15 @@
       <div class="grid grid-cols-3 gap-4 W-3/4 text-white">
         <div class="bg-emerald-800 p-8 rounded-xl">
           <h2 class="text-3xl">Deposit</h2>
-          <h2 class="text-5xl">$<span class="deposit-display">00</span></h2>
+          <h2 class="text-5xl">$<span id="deposit-display">00</span></h2>
         </div>
         <div class="bg-purple-400 p-8 rounded-xl">
           <h2 class="text-3xl">Withdraw</h2>
-          <h2 class="text-5xl">$<span class="withdraw-display">00</span></h2>
+          <h2 class="text-5xl">$<span id="withdraw-display">00</span></h2>
         </div>
         <div class="bg-green-400 p-8 rounded-xl">
           <h2 class="text-3xl">Balance</h2>
-          <h2 class="text-5xl">$<span class="balance-display">1240</span></h2>
+          <h2 class="text-5xl">$<span id="balance-display">1240</span></h2>
         </div>
       </div>
     </section>
@@ -40,7 +40,7 @@
             id="deposit"
             type="text"
             placeholder="$ Your deposit Amount"
-            class="w-3/4 px-5 py-3 rounded-lg block text-white"
+            class="w-3/4 px-5 py-3 rounded-lg block"
           />
           <button
             id="deposit-button"
@@ -49,13 +49,13 @@
             Deposit
           </button>
         </div>
-        <div class="bg-emerald-800 px-8 py-10 rounded-xl">
+        <div class="bg-sky-500 px-8 py-10 rounded-xl">
           <h1 class="text-2xl text-white mb-5">Withdraw Amount</h1>
           <input
             id="withdraw"
             type="text"
             placeholder="$ Your withdraw Amount"
-            class="w-3/4 px-5 py-3 rounded-lg block text-white"
+            class="w-3/4 px-5 py-3 rounded-lg block"
           />
           <button
             id="withdraw-button"
@@ -66,5 +66,7 @@
         </div>
       </div>
     </section>
+
+    <script src="./js/deposit.js"></script>
   </body>
 </html>
