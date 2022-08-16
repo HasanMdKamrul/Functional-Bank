@@ -22,4 +22,14 @@ document.getElementById('deposit-button').addEventListener('click', ()=>{
 
     const depositDisplay = displayDepositValue + inputValue;
     displayDepositValueField.innerText = depositDisplay;
+
+    // ** Now we'll grab the balance value or balance display
+
+    const balanceDisplayField = document.getElementById('balance-display');
+    const balanceDisplayValueString = balanceDisplayField.innerText;
+    const balanceDisplayValue = parseFloat(balanceDisplayValueString);
+
+    const balanceDisplay = balanceDisplayValue + inputValue;
+
+    balanceDisplayField.innerText = balanceDisplay;
 })
